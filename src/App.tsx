@@ -34,7 +34,7 @@ function App() {
     const formData = new FormData();
     formData.append('file', file);
     try {
-      const res = await axios.post('http://localhost:5000/upload', formData);
+      const res = await axios.post(`${process.env.REACT_APP_API}/upload`, formData);
       setResults(res.data.results);
     } catch (err) {
       console.error(err);
